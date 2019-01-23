@@ -4,7 +4,7 @@ variable "network_remote_state_key" {
 }
 
 variable "network_remote_state_bucket" {
-  default = "ddt-networking"
+  default = "wzp-networking"
 }
 
 variable "aws_access_key" {}
@@ -20,7 +20,7 @@ variable "ip_range" {
 }
 
 variable "rds_username" {
-  default     = "ddtuser"
+  default     = "wzpuser"
   description = "User name"
 }
 

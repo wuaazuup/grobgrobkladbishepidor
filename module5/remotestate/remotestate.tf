@@ -6,15 +6,15 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "aws_networking_bucket" {
-  default = "ddt-networking"
+  default = "wzp-networking"
 }
 
 variable "aws_application_bucket" {
-  default = "ddt-application"
+  default = "wzp-application"
 }
 
 variable "aws_dynamodb_table" {
-  default = "ddt-tfstatelock"
+  default = "wzp-tfstatelock"
 }
 
 ##################################################################################
@@ -82,7 +82,7 @@ resource "aws_dynamodb_table" "terraform_statelock" {
   }
 }
 
-resource "aws_s3_bucket" "ddtnet" {
+resource "aws_s3_bucket" "wzpnet" {
   bucket        = "${var.aws_networking_bucket}"
   acl           = "private"
   force_destroy = true
@@ -94,7 +94,7 @@ resource "aws_s3_bucket" "ddtnet" {
   policy = "${data.template_file.network_bucket_policy.rendered}"
 }
 
-resource "aws_s3_bucket" "ddtapp" {
+resource "aws_s3_bucket" "wzpapp" {
   bucket        = "${var.aws_application_bucket}"
   acl           = "private"
   force_destroy = true

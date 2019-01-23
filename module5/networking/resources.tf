@@ -21,7 +21,7 @@ data "aws_availability_zones" "available" {}
 # NETWORKING #
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
-  name   = "ddt-${terraform.workspace}"
+  name   = "wzp-${terraform.workspace}"
 
   cidr            = "${data.external.configuration.result.vpc_cidr_range}"
   azs             = "${slice(data.aws_availability_zones.available.names,0,data.external.configuration.result.vpc_subnet_count)}"
